@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alimentación Saludable - Curso DPCC</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            line-height: 1.7;
+            color: #333;
+            background-color: #ffffff;
+        }
+
+        /* Sección de Introducción */
+        .introduccion {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1542834369-83723f9f3256?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .introduccion h1 {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+        }
+
+        .introduccion p {
+            font-size: 1.2rem;
+            max-width: 850px;
+            margin: 0 auto;
+            text-align: justify;
+        }
+
+        /* Botones de Navegación */
+        .navegacion {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #f0fdf4;
+        }
+
+        .navegacion h2 {
+            color: #166534;
+            margin-bottom: 40px;
+            font-size: 1.9rem;
+        }
+
+        .contenedor-botones {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+        }
+
+        .boton-tema {
+            background-color: #166534;
+            color: white;
+            border: none;
+            padding: 16px 30px;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .boton-tema:hover {
+            background-color: #14532d;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+        }
+
+        /* Estilo de las secciones */
+        .seccion-contenido {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: none;
+        }
+
+        .seccion-contenido.activo {
+            display: block;
+        }
+
+        .seccion-contenido h2 {
+            color: #166534;
+            font-size: 2rem;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .seccion-contenido img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+            margin-bottom: 25px;
+        }
+
+        .seccion-contenido p {
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+
+        /* Sección Consejos para Adolescentes */
+        .consejos-adolescentes {
+            background-color: #f0fff4;
+            padding: 60px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 12px;
+        }
+
+        .consejos-adolescentes h2 {
+            color: #166534;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+        }
+
+        .consejos-adolescentes ul {
+            list-style: none;
+            padding-left: 10px;
+        }
+
+        .consejos-adolescentes li {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            padding-left: 8px;
+        }
+
+        /* Sección Consejos Alimenticios */
+        .seccion-consejos {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .seccion-consejos h2 {
+            color: #166534;
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 1.9rem;
+        }
+
+        /* Sección Receta */
+        .seccion-receta {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .seccion-receta h2 {
+            color: #166534;
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 1.9rem;
+        }
+
+        /* Sección de Preguntas */
+        .seccion-preguntas {
+            background-color: #e8f5e9;
+            padding: 60px 20px;
+        }
+
+        .seccion-preguntas h2 {
+            text-align: center;
+            color: #166534;
+            font-size: 2rem;
+            margin-bottom: 40px;
+        }
+
+        .contenedor-preguntas {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .pregunta {
+            background: white;
+            padding: 22px;
+            margin-bottom: 18px;
+            border-radius: 10px;
+            border-left: 6px solid #166534;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .pregunta h4 {
+            color: #166534;
+            margin-bottom: 10px;
+            font-size: 1.15rem;
+        }
+
+        .pregunta p {
+            color: #333;
+            font-size: 1.05rem;
+        }
+
+        /* Pie de página */
+        footer {
+            background-color: #14532d;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            font-size: 1rem;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- INTRODUCCIÓN -->
+    <section class="introduccion">
+        <h1>ALIMENTACIÓN SALUDABLE - CUIDA TU VIDA</h1>
+        <p>
+        La alimentación saludable es fundamental para mantener nuestro cuerpo fuerte, sano y lleno de energía. Los alimentos que consumimos cada día influyen en nuestro crecimiento, rendimiento físico, concentración y bienestar emocional. En esta página conocerás la importancia de los alimentos nativos del Perú, la diferencia entre comida saludable y chatarra, los trastornos alimenticios y consejos prácticos para llevar una buena vida, especialmente para los adolescentes. 🌱💚
+        </p>
+    </section>
+
+    <!-- BOTONES DE NAVEGACIÓN -->
+    <section class="navegacion">
+        <h2>Explora los Temas</h2>
+        <div class="contenedor-botones">
+            <button class="boton-tema" onclick="mostrarSeccion('tema1')">Tema 1: Alimentos Nativos del Perú</button>
+            <button class="boton-tema" onclick="mostrarSeccion('tema2')">Tema 2: Comida Saludable vs Chatarra</button>
+            <button class="boton-tema" onclick="mostrarSeccion('tema3')">Tema 3: Desórdenes Alimenticios</button>
+            <button class="boton-tema" onclick="mostrarSeccion('consejos')">Consejos Alimenticios</button>
+            <button class="boton-tema" onclick="mostrarSeccion('receta')">Receta Saludable</button>
+        </div>
+    </section>
+
+    <!-- CONTENIDO DE CADA SECCIÓN -->
+    <!-- TEMA 1 -->
+    <section id="tema1" class="seccion-contenido activo">
+        <h2>Reconocemos la relevancia de la cultura alimentaria del Perú</h2>
+        <img src="https://raw.githubusercontent.com/spidernacho33-web/Nutrivida/main/tema1.jpg" alt="Alimentos Nativos del Perú">
+        <p>El Perú posee una gran diversidad de alimentos nativos como la quinua, kiwicha, camu camu, lucuma, castaña y yacón. Estos alimentos tienen alto valor nutricional, aportan proteínas, vitaminas y minerales esenciales. Son parte fundamental de nuestra identidad cultural, fortalecen nuestras defensas y ayudan a cuidar nuestra salud y bienestar general.</p>
+    </section>
+
+    <!-- TEMA 2 -->
+    <section id="tema2" class="seccion-contenido">
+        <h2>Identificamos la cultura alimentaria de los estudiantes</h2>
+        <img src="https://raw.githubusercontent.com/spidernacho33-web/Nutrivida/main/tema2.jpg" alt="Comida Saludable y Chatarra">
+        <p>La alimentación saludable nos brinda los nutrientes y la energía que nuestro cuerpo necesita para crecer, aprender y estar sanos. Por el contrario, la comida chatarra tiene buen sabor pero alto contenido de azúcar, sal y grasas, lo que puede causar obesidad, diabetes, problemas cardíacos y falta de concentración. Es importante conocer las ventajas y desventajas para elegir bien.</p>
+    </section>
+
+    <!-- TEMA 3 -->
+    <section id="tema3" class="seccion-contenido">
+        <h2>Reflexionamos sobre los desórdenes alimenticios</h2>
+        <img src="https://raw.githubusercontent.com/spidernacho33-web/Nutrivida/main/tema3.jpg" alt="Desórdenes Alimenticios">
+        <p>Existen trastornos como la anorexia (miedo excesivo a engordar), bulimia (atracones seguidos de purgas) y vigorexia (obsesión por la figura corporal). Estos problemas afectan tanto la salud física como mental. Para cuidarnos debemos elegir alimentos naturales, evitar excesos y cuidar tanto el cuerpo como la mente, buscando ayuda si es necesario.</p>
+    </section>
+
+    <!-- CONSEJOS PARA ADOLESCENTES -->
+    <section class="consejos-adolescentes">
+        <h2>✅ Consejos para llevar una dieta saludable en la adolescencia</h2>
+        <ul>
+            <li>🍎 <strong>No te saltes el desayuno:</strong> Te da energía para estudiar y realizar actividades durante todo el día.</li>
+            <li>🥗 <strong>Come más frutas y verduras:</strong> Consume al menos 5 porciones al día, aportan vitaminas y fibra.</li>
+            <li>🍗 <strong>Incluye proteínas:</strong> Huevos, pescado, pollo, menestras y frutos secos ayudan a tu crecimiento.</li>
+            <li>🥛 <strong>Alimentos con calcio:</strong> Leche, yogur y queso fortalecen tus huesos y dientes.</li>
+            <li>💧 <strong>Mantente hidratado:</strong> Bebe agua frecuentemente y limita las bebidas azucaradas.</li>
+            <li>🍔 <strong>Reduce la comida chatarra:</strong> Consumela solo de vez en cuando y con moderación.</li>
+            <li>🌾 <strong>Elige cereales integrales:</strong> Quinua, avena y pan integral te dan más energía y fibra.</li>
+            <li>🏃 <strong>Combina con ejercicio:</strong> Actividad física diaria mejora tu salud y rendimiento.</li>
+            <li>😴 <strong>Duerme lo suficiente:</strong> Necesitas entre 8 y 10 horas para crecer bien.</li>
+            <li>🍽️ <strong>Come con conciencia:</strong> Escucha a tu cuerpo y no comas demasiado rápido.</li>
+        </ul>
+    </section>
+
+    <!-- SECCIÓN CONSEJOS ALIMENTICIOS -->
+    <section id="consejos" class="seccion-consejos">
+        <h2>Consejos Alimenticios Prácticos</h2>
+        <img src="https://raw.githubusercontent.com/spidernacho33-web/Nutrivida/main/tema4.jpg" alt="Consejos Alimenticios">
+    </section>
+
+    <!-- SECCIÓN RECETA -->
+    <section id="receta" class="seccion-receta">
+        <h2>Receta Saludable: Mazamorra de Kiwicha</h2>
+        <img src="https://raw.githubusercontent.com/spidernacho33-web/Nutrivida/main/tema5.jpg" alt="Receta Kiwicha">
+    </section>
+
+    <!-- SECCIÓN DE PREGUNTAS -->
+    <section class="seccion-preguntas">
+        <h2>📝 Sección de Preguntas y Reflexión</h2>
+        <div class="contenedor-preguntas">
+
+            <div class="pregunta">
+                <h4>1. ¿Por qué es importante valorar los alimentos nativos de nuestro país?</h4>
+                <p>Porque tienen gran valor nutricional, son parte de nuestra cultura, apoyan la economía local y son beneficiosos para el crecimiento y salud de los adolescentes.</p>
+            </div>
+
+            <div class="pregunta">
+                <h4>2. ¿Cuáles son las diferencias principales entre la alimentación saludable y la comida chatarra?</h4>
+                <p>La saludable aporta nutrientes, vitaminas y energía de calidad. La chatarra tiene exceso de azúcar, sal y grasas, aporta pocas sustancias útiles y puede causar enfermedades a largo plazo.</p>
+            </div>
+
+            <div class="pregunta">
+                <h4>3. ¿Qué trastornos alimenticios conocemos y cómo se manifiestan?</h4>
+                <p>Conocemos la anorexia (miedo a engordar), bulimia (atracones y purgas) y vigorexia (obsesión por el cuerpo). Todos afectan la salud física y mental de los jóvenes.</p>
+            </div>
+
+            <div class="pregunta">
+                <h4>4. ¿Por qué es fundamental cuidar la alimentación durante la adolescencia?</h4>
+                <p>Porque es la etapa donde se produce el mayor crecimiento y desarrollo del cuerpo. Los nutrientes ayudan a formar huesos, músculos, cerebro y a tener energía para estudiar y jugar.</p>
+            </div>
+
+            <div class="pregunta">
+                <h4>5. ¿Qué consejos aplicarías hoy mismo para mejorar tu alimentación?</h4>
+                <p>Evitar saltarse el desayuno, beber más agua, comer frutas y verduras, reducir las gaseosas y hacer actividad física diaria.</p>
+            </div>
+
+            <div class="pregunta">
+                <h4>6. ¿De qué manera podemos promover hábitos saludables en nuestra escuela y familia?</h4>
+                <p>Compartiendo lo aprendido, eligiendo alimentos naturales, organizando campañas y animando a otros a cuidar su salud.</p>
+            </div>
+
+            <div class="pregunta">
+                <h4>7. ¿Qué debemos hacer si notamos que alguien tiene malos hábitos alimenticios?</h4>
+                <p>Informarnos bien, hablar con respeto, recomendar ayuda profesional y apoyar a esa persona sin juzgarla, buscando siempre su bienestar.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PIE DE PÁGINA CON LOS NOMBRES -->
+    <footer>
+        <p>Proyecto DPCC - Alimentación Saludable © 2026 | Trabajo hecho por: García, Guevara, Chipa, Castillo, Huaman Salazar, Murga - 5° J</p>
+    </footer>
+
+    <script>
+        function mostrarSeccion(idSeccion) {
+            document.querySelectorAll('.seccion-contenido, .consejos-adolescentes').forEach(sec => {
+                sec.classList.remove('activo');
+            });
+            document.getElementById(idSeccion).classList.add('activo');
+            document.getElementById(idSeccion).scrollIntoView({behavior: 'smooth'});
+        }
+    </script>
+
+</body>
+</html>
